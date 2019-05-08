@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int  number,f1=1,f2=1,f3=1;
+    cout << "up to which number you want to know fiboncci numbers:\t";
+    cin >> number;
+    cout << f1 <<" ";
+    while (f3<number)
+    {
+        f1=f2;
+        f2=f3;
+        cout << f3 << " ";
+        f3=f1+f2;
+    }
+    return 0;
+}
