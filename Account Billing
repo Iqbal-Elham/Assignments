@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int accNum, numPreChan,numOfBasic;
+    char customerType;
+    double amountDue;
+    const double resBill=4.50, resBasicServ=20.50,resCostPremChannel=7.50;
+    const double busBill=15.00, busBasicServ=75.00,busCostPremChannel=50.00, busBasicCon=5.00;
+    cout << "please enter your Account number:\n";
+    cin>> accNum;
+    cout << "please enter your Code:\n";
+    cin >> customerType;
+     if (customerType=='r'|| customerType== 'R' )
+     {
+        cout << "please enter your premium channel number\n";
+        cin >> numPreChan;
+        amountDue=resBill+resBasicServ+numPreChan*resCostPremChannel;
+        cout << "your account number is:\t"<< accNum;
+        cout << "\nyour Billing amount is:\t" << amountDue;
+     }
+     else
+         if (customerType=='b' || customerType=='B')
+     {
+
+        cout << "please Enter number of Basic Service Connections:\n";
+        cin >> numOfBasic;
+        cout << "please Enter number of premium channels:\n";
+        cin >> numPreChan;
+
+     {
+         if (numOfBasic<=10)
+         {
+             amountDue= busBill+busBasicServ+numPreChan*busCostPremChannel;
+         }
+         else
+         {
+            amountDue= busBill+busBasicServ+(numOfBasic-10)*busBasicServ+numPreChan*busCostPremChannel;
+         }
+         cout << "Your Account number is:\n" << accNum;
+         cout << "\nYour Billing Amount is:\n"<< amountDue;
+     }
+     }
+     else
+        {
+            cout << "ERROR";
+        }
+    return 0;
+}
+
